@@ -1,0 +1,119 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package viniproj;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author DELL
+ */
+public class Viniproj {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double total = 0.0;
+        double cash = 0.0;
+
+        do {
+            total = 0.0;
+            cash = 0.0;
+
+            do {
+                System.out.println("Hello, welcome to D/Furious!");
+                System.out.println("Select a car model:");
+                System.out.println("FM for Ford Mustang - $3.50");
+                System.out.println("HC for Honda Civic Type R - $3.87");
+                System.out.println("JP for Jeep Wrangler - $3.39");
+                System.out.println("MS for BMW M Series - $4.79");
+                System.out.println("LC for Land Cruiser - $5.73");
+                System.out.println("PC for Porche 911 Carrera S - $7.28");
+                System.out.println("GT for Nissan GT-R - $12.50");
+                char carModel = scanner.next().toUpperCase().charAt(0);
+
+                if (carModel == 'F' || carModel == 'H' || carModel == 'J' || carModel == 'M' || carModel == 'L' || carModel == 'P' || carModel == 'G') {
+                    if (carModel == 'F') {
+                        System.out.println("Ford Mustang was your choice; please indicate the quantity ");
+                        double quantity = scanner.nextDouble();
+                        total += 3.50 * quantity;
+                        System.out.printf("Total cost: %.2f%n", total);
+                    } else if (carModel == 'H') {
+                        System.out.println("Honda Civic Type R was your choice; please indicate the quantity ");
+                        double quantity = scanner.nextDouble();
+                        total += 3.87 * quantity;
+                        System.out.printf("Total cost: %.2f%n", total);
+                    } else if (carModel == 'J') {
+                        System.out.println("Jeep Wrangler was your choice; please indicate the quantity  ");
+                        double quantity = scanner.nextDouble();
+                        total += 3.39 * quantity;
+                        System.out.printf("Total cost: %.2f%n", total);
+                    } else if (carModel == 'M') {
+                        System.out.println("BMW M Series was your choice; please indicate the quantity  ");
+                        double quantity = scanner.nextDouble();
+                        total += 4.79 * quantity;
+                        System.out.printf("Total cost: %.2f%n", total);
+                    } else if (carModel == 'L') {
+                        System.out.println("Land Cruiser was your choice; please indicate the quantity ");
+                        double quantity = scanner.nextDouble();
+                        total += 5.73 * quantity;
+                        System.out.printf("Total cost: %.2f%n", total);
+                    } else if (carModel == 'P') {
+                        System.out.println("Porche 911 Carrera S was your choice; please indicate the quantity  ");
+                        double quantity = scanner.nextDouble();
+                        total += 7.28 * quantity;
+                        System.out.printf("Total cost: %.2f%n", total);
+                    } else if (carModel == 'G') {
+                        System.out.println("Nissan GT-R was your choice; please indicate the quantity  ");
+                        double quantity = scanner.nextDouble();
+                        total += 12.50 * quantity;
+                        System.out.printf("Total cost: %.2f%n", total);
+                    }
+                } else {
+                    System.out.println("Invalid input. Please enter FM, HC, JP, MS, LC, PC or GT.");
+                    continue;
+                }
+                System.out.println("Do you want to purchase more cars? (Y or N)");
+                char response = scanner.next().toUpperCase().charAt(0);
+
+                if (response == 'N') {
+                    break;
+                }
+            } while (true);
+            System.out.printf("Your total bill: %.2f%n", total);
+
+            System.out.println("Kindly provide the amount of cash you intend to pay.:");
+            cash = scanner.nextDouble();
+
+            while (cash < total) {
+                System.out.println("Insufficient cash. Please add more cash.");
+                double additionalCash = scanner.nextDouble();
+                cash += additionalCash;
+            }
+
+            double change = cash - total;
+            System.out.printf("Total change: %.2f%n", change);
+            System.out.println("Thank you for shopping at D/Furious. Drive safe!");
+
+            System.out.println("Do you want to make another transaction? (Y or N)");
+            char repeatResponse = scanner.next().toUpperCase().charAt(0);
+
+            if (repeatResponse == 'N') {
+                break;
+            }
+        } while (true);
+    }
+}
+    
+    
+    
+
+
+    
+    
+
